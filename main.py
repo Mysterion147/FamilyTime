@@ -35,14 +35,17 @@ family_db.define_specie("529y", "Papagaio")
 
 # criando as relacoes familiares
 family_db.create_marriage("147a", "12e", "medium")
+family_db.create_marriage("12e", "147a", "medium")
 family_db.create_parenthood("147a", "232d", "medium")
 family_db.create_parenthood("12e", "232d", "good")
 family_db.create_marriage("232d", "890m", "good")
+family_db.create_marriage("890m", "232d", "good")
 family_db.create_parenthood("232d", "5464k", "good")
 family_db.create_parenthood("890m", "5464k", "bad")
 family_db.create_parenthood("232d", "0098c", "medium")
 family_db.create_parenthood("890m", "0098c", "medium")
 family_db.create_brotherhood("5464k", "0098c", "good")
+family_db.create_brotherhood("0098c", "5464k", "good")
 # relacionando os pets e seus donos
 family_db.create_ownership("4242", "12e")
 family_db.create_ownership("1936v", "0098c")
@@ -65,7 +68,7 @@ while True:
     elif num == 3:
         wanted_id = input("Qual o id da pessoa desejada?")
         print("A pessoa buscada é casada com: ")
-        print(family_db.get_partner())
+        print(family_db.get_partner(wanted_id))
     else:
         print("Nao existe funcao para o numero digitado. Tente novamente!")
 
